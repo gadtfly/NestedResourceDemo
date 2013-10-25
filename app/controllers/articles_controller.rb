@@ -2,19 +2,19 @@ class ArticlesController < ApplicationController
   before_filter :load_wiki
 
   def index
-    @articles = Article.all
+    @articles = @wiki.articles.all
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = @wiki.articles.find(params[:id])
   end
 
   def new
-    @article = Article.new
+    @article = @wiki.articles.new
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article = @wiki.articles.new(params[:article])
     @article.save
 
     redirect_to [@wiki, @article]
@@ -22,11 +22,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = @wiki.articles.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = @wiki.articles.find(params[:id])
     @article.update_attributes(params[:article])
 
     redirect_to [@wiki, @article]
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = @wiki.articles.find(params[:id])
     @article.destroy
 
     redirect_to [@wiki, :articles]
