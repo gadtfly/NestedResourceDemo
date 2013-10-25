@@ -1,0 +1,9 @@
+<h1>
+  New Wiki
+</h1>
+
+<%= form_for @wiki do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :summary %>
+  <%= f.submit %>
+<% end %>

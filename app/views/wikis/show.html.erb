@@ -1,0 +1,16 @@
+<h1>
+  <%= @wiki.title %>
+</h1>
+
+<h2>
+  <%= link_to 'Articles', [@wiki, :articles] %>
+</h2>
+
+<p>
+  <%= @wiki.summary %>
+</p>
+
+<%= link_to 'Edit Wiki', [:edit, @wiki] %>
+<%= link_to 'Delete Wiki', @wiki, method: :delete %>
+<%#= link_to 'Edit Wiki', edit_wiki_path(@wiki) %>
+<%#= link_to 'Delete Wiki', wiki_path(@wiki), method: :delete %>

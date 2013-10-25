@@ -1,0 +1,12 @@
+<h1>
+  <%= @article.title %>
+</h1>
+
+<p>
+  <%= @article.body %>
+</p>
+
+<%= link_to 'Edit Article', [:edit, @wiki, @article] %>
+<%= link_to 'Delete Article', [@wiki, @article], method: :delete %>
+<%#= link_to 'Edit Article', edit_wiki_article_path(@wiki, @article) %>
+<%#= link_to 'Delete Article', wiki_article_path(@wiki, @article), method: :delete %>

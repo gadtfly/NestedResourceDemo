@@ -1,0 +1,14 @@
+<h1>
+  Wikis
+</h1>
+
+<ul>
+  <% @wikis.each do |wiki| %>
+    <li>
+      <%= link_to wiki.title, wiki %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Wiki', [:new, :wiki] %>
+<%#= link_to 'New Wiki', new_wiki_path %>
